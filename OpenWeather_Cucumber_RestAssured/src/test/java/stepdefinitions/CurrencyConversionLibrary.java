@@ -1,15 +1,9 @@
 package stepdefinitions;
-
-
 import org.openqa.selenium.Keys;
-
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
 import pageobjects.CurrencyConversionPOM;
-
 import utils.BasePage;
 
 public class CurrencyConversionLibrary extends BasePage
@@ -25,18 +19,21 @@ public class CurrencyConversionLibrary extends BasePage
 
     @When("^enter \"([^\"]*)\" in Amount field$")
     public void enter_in_Amount_field(String amt)  {
+    
         driver.findElement(rate.amount).sendKeys(amt);
     	
     }
 
     @When("^select \"([^\"]*)\" in From dropdown$")
-    public void select_in_From_dropdown(String baseCurrency) {
-     driver.findElement(rate.fromCurrency).sendKeys(baseCurrency);
+     public void select_in_From_dropdown(String baseCurrency) {
+     
+         driver.findElement(rate.fromCurrency).sendKeys(baseCurrency);
     	
     }
 
     @When("^select \"([^\"]*)\" in To dropdown$")
     public void select_in_To_dropdown(String targetCurrency) throws InterruptedException  {
+    
     	driver.findElement(rate.toCurrency).sendKeys(targetCurrency, Keys.ENTER);
     }
 
@@ -48,6 +45,7 @@ public class CurrencyConversionLibrary extends BasePage
 
     @Then("^read the converted value and display the value$")
     public void read_the_converted_value_and_display_the_value() {
+    
        Object convertedVal = driver.findElement(rate.result).getText();
        System.out.println("The converted value is:" +convertedVal);
     }
