@@ -1,14 +1,9 @@
 package utils;
 
-
-
 import java.util.concurrent.TimeUnit;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import stepdefinitions.ValidateStatusCodeLibrary;
